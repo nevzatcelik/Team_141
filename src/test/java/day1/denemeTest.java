@@ -1,3 +1,5 @@
+package day1;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -38,12 +40,21 @@ public class denemeTest {
         UiAutomator2 isletim sistemi 6.0 dan buyuk isletim sistemleri icin calisan otomasyon
         UiAutomator ise 6.0 ya da 6 dan kucuk isletim sistemleri icin calisan otomasyon
          */
-
+        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\ahmet\\IdeaProjects\\Appium_T_141\\Apps\\Calculator_8.4 (503542421)_Apkpure (3).apk");
+        /*
+        App capability bir uygulama eger yuklu degilse uygulamayi cihaza yuklemek icin kullanilir
+        Eger uygulama yukluyse ve tekrardan test calistirilirsa App capability uygulama yuklu mu diye kontrol eder
+        eger yuklu degilse uygulamayi yukler, eger yukluyse uygulamayi acar
+         */
         driver=new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         // bak dostum ben sana herhangi emirde bulundugumda eger verdigi emri yerine getiremiyorsan
         // ornegin git bir butona tikla dedim sende bulamadin. sonsuza kadar arama 15 saniye sonra geri don
 
+        // kullanici gerekli kurulumlari yapar
+        // uygulamanin yuklendigini dogrular(isInstalled)
+       // uygulamanin acildigini dogrular
+       // 400 un 3 katininin 1200 oldugunu hesap makinasindan dogrulayalim
 
 
     }
