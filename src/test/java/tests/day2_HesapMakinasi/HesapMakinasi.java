@@ -1,4 +1,4 @@
-package day2_HesapMakinasi;
+package tests.day2_HesapMakinasi;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;

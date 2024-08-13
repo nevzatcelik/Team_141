@@ -1,11 +1,7 @@
-package day1;
+package tests.day1;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
@@ -14,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class denemeTest {
+public class ApkYukleme {
 
     AndroidDriver<AndroidElement> driver;
     // Android driver, Android cihazlar icin uretilmis ve ona gore ozellikleri eklenmis driver
@@ -40,7 +36,7 @@ public class denemeTest {
         UiAutomator2 isletim sistemi 6.0 dan buyuk isletim sistemleri icin calisan otomasyon
         UiAutomator ise 6.0 ya da 6 dan kucuk isletim sistemleri icin calisan otomasyon
          */
-        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\ahmet\\IdeaProjects\\Appium_T_141\\Apps\\Calculator_8.4 (503542421)_Apkpure (3).apk");
+        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\ahmet\\IdeaProjects\\Appium_T_141\\Apps\\Kiwi.com - Book Cheap Flights_2023.14.0_Apkpure (1).apk");
         /*
         App capability bir uygulama eger yuklu degilse uygulamayi cihaza yuklemek icin kullanilir
         Eger uygulama yukluyse ve tekrardan test calistirilirsa App capability uygulama yuklu mu diye kontrol eder
@@ -51,10 +47,6 @@ public class denemeTest {
         // bak dostum ben sana herhangi emirde bulundugumda eger verdigi emri yerine getiremiyorsan
         // ornegin git bir butona tikla dedim sende bulamadin. sonsuza kadar arama 15 saniye sonra geri don
 
-        // kullanici gerekli kurulumlari yapar
-        // uygulamanin yuklendigini dogrular(isInstalled)
-       // uygulamanin acildigini dogrular
-       // 400 un 3 katininin 1200 oldugunu hesap makinasindan dogrulayalim
 
 
     }
