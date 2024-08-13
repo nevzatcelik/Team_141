@@ -40,7 +40,11 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
             caps.setCapability("appPackage","com.skypicker.main");
             caps.setCapability("appActivity","com.kiwi.android.feature.splash.impl.ui.SplashActivity");
-
+            caps.setCapability(MobileCapabilityType.NO_RESET,false);
+            /* eger false olursa; her test baslangicinda kullanici datalari(tercihleri) sifirlanir ve uygulama
+            her seferinde ilk yuklendigi haliyle calisir
+             */
+            // eger true olursa,kullanici datalari kaydedilir ve uygualama tekrardan basladiginda tercihler sorulmaz
             if (ConfigReader.getProperty("platformName").equals("Android")) {
 
                 assert appiumServerURL != null;
