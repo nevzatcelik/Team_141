@@ -1,16 +1,21 @@
 package day_3_ArabamCom;
 
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.aspectj.weaver.ast.And;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import javax.swing.plaf.PanelUI;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ArabamApp {
@@ -35,12 +40,30 @@ public class ArabamApp {
     }
 
     @Test
-    public void arabamTest1(){
+    public void arabamTest1() throws InterruptedException {
         // uygulamanin basarili bir sekilde yuklendigi dogrulanir
+        Assert.assertTrue(driver.isAppInstalled("com.dogan.arabam"));
         // uygulaminin basarili bir sekilde acildigi dogrulanir
+         Assert.assertTrue(driver.findElementById("com.dogan.arabam:id/ivArabamLogo").isDisplayed());
         // alt menuden ilan ara butonuna tiklanir
+        driver.findElementByXPath("//*[@text='İlan Ara']").click();
         // kategori olarak otomobil secilir
+        driver.findElementByXPath("//*[@text='Otomobil']").click();
         // arac olarak Volkswagen secilir
+        Thread.sleep(2000);
+        TouchAction action=new TouchAction<>(driver);
+        action.press(PointOption.point(521,1809))
+                // pres islemi ekran parmagimizi kaydir islemini baslatmak icin ilk dokundugumuz yerdir
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+                // baslangic noktasiyla bitis noktasi arasindaki gecen sure
+                // eger sure azalirsa; gidilen yol mesafesi ARTAR
+                // eger sureyi arttirirsan; gidilen yol mesafesi AZALIR !!
+                // yani tamamen bir ters oranti vardir. ekranda daha fazla assagi ya da yukari gitmek istiyorsak
+                // birim zamanda sureyi azaltmaliyiz
+                .moveTo(PointOption.point(521,521))
+                // Move to pressten sonra kaydirilacak alan olan ekrandaki koordinat noktasi
+                .release() // kaydirma islemi bittikten sonra ekrandan parmagimizi kaldirma islemi
+                .perform(); // kaydirma islemi yapmasi icin yap emrinin verilmesi
         // arac markasi olarak passat secilir
         // 1.4 TSI BlueMotion secilir
         // Paket secimi yapilir
