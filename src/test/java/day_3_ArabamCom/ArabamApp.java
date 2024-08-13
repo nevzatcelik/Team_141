@@ -64,11 +64,30 @@ public class ArabamApp {
                 // Move to pressten sonra kaydirilacak alan olan ekrandaki koordinat noktasi
                 .release() // kaydirma islemi bittikten sonra ekrandan parmagimizi kaldirma islemi
                 .perform(); // kaydirma islemi yapmasi icin yap emrinin verilmesi
+           Thread.sleep(1000);
+          driver.findElementByXPath("//*[@text='Volkswagen']").click();
         // arac markasi olarak passat secilir
+         driver.findElementByXPath("//*[@text='Passat']").click();
         // 1.4 TSI BlueMotion secilir
+         driver.findElementByXPath("//*[@text='1.4 TSi BlueMotion']").click();
+
         // Paket secimi yapilir
-        // Ucuzdan pahaliya siralama yaparak filtreleme yapilir
+        driver.findElementByXPath("//*[@text='Comfortline']").click();
+
+        // Ucuzdan pahaliya siralama yaparak filtreleme yapilir 408,400
+        Thread.sleep(1500);
+        action.press(PointOption.point(408,400))
+                .release()
+                .perform();
+
+        driver.findElementByXPath("//*[@text='Fiyat - Ucuzdan Pahalıya']").click();
         // Gelen en ucuz aracin 500.000 tl den buyuk oldugu dogrulanir
+        String enUcuzFiyat=driver.findElementByXPath("(//*[@resource-id='com.dogan.arabam:id/tvPrice'])[1]").getText();
+        enUcuzFiyat=enUcuzFiyat.replaceAll("\\D","");
+
+
+        Assert.assertTrue(Integer.parseInt(enUcuzFiyat)>500000);
+
     }
 
     @Test
