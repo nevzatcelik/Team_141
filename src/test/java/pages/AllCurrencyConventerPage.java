@@ -16,4 +16,15 @@ public class AllCurrencyConventerPage {
     public WebElement birinciMenu;
     @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/SpinnerCurrencyB")
     public WebElement ikinciMenu;
+
+    @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/b1")
+    public WebElement bir;
+
+    @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/b000")
+    public WebElement ucSifir;
+
+    @FindBy(id = "com.smartwho.SmartAllCurrencyConverter:id/EditTextCurrencyB")
+    public WebElement resultExchange;
+
+
 }
