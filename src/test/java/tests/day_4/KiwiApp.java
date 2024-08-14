@@ -30,9 +30,19 @@ public class KiwiApp {
 
 
 // Trip type,one way olarak secilir
+        page.returnButton.click();
+        page.oneWay.click();
+        page.fromButton.click();
 // kalkis ulkesi secenegine tiklanir ve default olan ulke kaldirilir
-
+     page.clearButton.click();
 // kalkis yapilacak ulke/sehir girilir ve sec e tiklanir
+        if (!driver.isKeyboardShown()){
+         driver.getKeyboard().pressKey("istanbul");
+        }else {
+           page.kalkisKutusu.sendKeys("Antalya");
+        }
+
+       page.fromTopPlusButton.click();
 // varis ulkesi secenegine tiklanir ve gidilecek ulke girilir
 // gidis tarihi agustos ayinin 21 i olarak secilir ve set date e tiklanir
 // search butonuna tiklanir

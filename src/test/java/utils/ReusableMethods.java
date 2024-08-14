@@ -17,6 +17,5 @@ public class ReusableMethods {
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(bekleme)))
                 .release()
                 .perform();
-
     }
 }
