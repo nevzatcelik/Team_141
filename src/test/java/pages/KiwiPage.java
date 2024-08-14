@@ -32,4 +32,35 @@ public class KiwiPage {
 
     @FindBy(xpath = "(//*[@content-desc='Add destination'])[1]")
     public WebElement fromTopPlusButton;
+
+    @FindBy(xpath = "//*[@text='Choose']")
+    public WebElement chooseButton;
+
+    @FindBy(xpath = "//*[@text='To:']")
+    public WebElement toButton;
+
+    @FindBy(xpath = "//*[@text='Departure:']")
+    public WebElement departureButton;
+
+    @FindBy(id = "com.skypicker.main:id/saveButton")
+    public WebElement setDateButton;
+
+    @FindBy(xpath = "(//*[@text='Search'])[1]")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//*[@text='Best']")
+    public WebElement bestButton;
+
+    @FindBy(xpath = "//*[@text='Cheapest']")
+    public WebElement cheapestButton;
+
+    @FindBy(xpath = "//*[@text='Stops']")
+    public WebElement stopsButton;
+
+    @FindBy(xpath = "//*[@text='Nonstop']")
+    public WebElement notstopButton;
+
+    @FindBy(xpath = "(//*[@class='android.widget.TextView'])[12]")
+    public WebElement priceResult;
+
 }
